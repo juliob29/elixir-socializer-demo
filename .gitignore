@@ -37,3 +37,6 @@ socializer-*.tar
 
 .DS_Store
 /tmp
+
+.vscode/
+client/package-lock.json

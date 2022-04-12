@@ -26,7 +26,7 @@ defmodule SocializerWeb.Schema.ConversationTypes do
 
     @desc "Get a specific conversation"
     field :conversation, :conversation do
-      arg(:id, non_null(:id))
+      arg(:id, non_null(:string))
 
       resolve(&Resolvers.ConversationResolver.show/3)
     end
@@ -35,7 +35,7 @@ defmodule SocializerWeb.Schema.ConversationTypes do
   object :conversation_mutations do
     @desc "Create conversation"
     field :create_conversation, :conversation do
-      arg(:user_ids, non_null(list_of(:id)))
+      arg(:user_ids, non_null(list_of(:string)))
 
       resolve(&Resolvers.ConversationResolver.create/3)
     end

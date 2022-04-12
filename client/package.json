@@ -5,6 +5,7 @@
   "dependencies": {
     "@absinthe/socket": "^0.2.1",
     "@absinthe/socket-apollo-link": "^0.2.1",
+    "@apollo/client": "^3.5.10",
     "@apollo/react-hooks": "^3.0.1",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/polyfill": "^7.4.3",
@@ -67,7 +68,7 @@
     "acorn": "^6.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "serve": "NODE_PATH=src node ./server/index.js",
     "format": "prettier --write './*.js' '**/*.js'",

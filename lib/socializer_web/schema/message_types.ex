@@ -26,7 +26,7 @@ defmodule SocializerWeb.Schema.MessageTypes do
   object :message_mutations do
     @desc "Create message"
     field :create_message, :message do
-      arg(:conversation_id, non_null(:id))
+      arg(:conversation_id, non_null(:string))
       arg(:body, non_null(:string))
 
       resolve(&Resolvers.MessageResolver.create/3)
@@ -35,7 +35,7 @@ defmodule SocializerWeb.Schema.MessageTypes do
 
   object :message_subscriptions do
     field :message_created, :message do
-      arg(:conversation_id, non_null(:id))
+      arg(:conversation_id, non_null(:string))
 
       config(fn args, %{context: context} ->
         with user when not is_nil(user) <- context[:current_user],

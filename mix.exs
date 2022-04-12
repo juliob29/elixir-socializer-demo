@@ -35,8 +35,8 @@ defmodule Socializer.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.4.0"},
-      {:phoenix_pubsub, "~> 1.1"},
+      {:phoenix, "~> 1.5.9"},
+      {:phoenix_pubsub, "~> 2.0"},
       {:phoenix_ecto, "~> 4.0"},
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
@@ -44,11 +44,11 @@ defmodule Socializer.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:cors_plug, "~> 2.0"},
-      {:bcrypt_elixir, "~> 2.0"},
+      {:bcrypt_elixir, "~> 3.0.0"},
       {:guardian, "~> 1.0"},
-      {:absinthe, "~> 1.4"},
-      {:absinthe_phoenix, "~> 1.4.0"},
-      {:absinthe_plug, "~> 1.4"},
+      {:absinthe, "~> 1.7.0"},
+      {:absinthe_phoenix, "~> 2.0.2"},
+      {:absinthe_plug, "~> 1.5.8"},
       {:dataloader, "~> 1.0.0"},
       {:poison, "~> 2.1.0"},
       {:quantum, "~> 2.3"},

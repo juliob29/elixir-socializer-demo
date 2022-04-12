@@ -52,6 +52,7 @@ const Conversation = ({
         document: MESSAGES_SUBSCRIPTION,
         variables: { conversationId: id },
         updateQuery: (prev, { subscriptionData }) => {
+
           if (!subscriptionData.data) return prev;
           const newMessage = subscriptionData.data.messageCreated;
 

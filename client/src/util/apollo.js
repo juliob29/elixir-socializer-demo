@@ -1,4 +1,4 @@
-import ApolloClient from "apollo-client";
+import {ApolloClient} from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import * as AbsintheSocket from "@absinthe/socket";
 import { createAbsintheSocketLink } from "@absinthe/socket-apollo-link";

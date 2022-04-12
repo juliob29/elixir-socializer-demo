@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import { Button } from "react-bootstrap";
@@ -14,7 +14,6 @@ export const SEARCH_USERS = gql`
     searchUsers(searchTerm: $searchTerm) {
       id
       name
-      gravatarMd5
     }
   }
 `;
@@ -29,8 +28,12 @@ export const CREATE_CONVERSATION = gql`
 
 const NewConversation = () => {
   const { setChatState } = useContext(ChatContext);
+
+  /* STATE VARIABLES OF THE COMPONENT */
   const [searchTerm, setSearchTerm] = useState("");
   const [users, setUsers] = useState([]);
+
+  /* THIS IS THE SEARCH ON GRAPHQL */
   const {
     loading: searchLoading,
     error: searchError,
@@ -38,13 +41,19 @@ const NewConversation = () => {
   } = useQuery(SEARCH_USERS, {
     variables: { searchTerm },
   });
+
+
+  /* THIS IS WHAT IS CALLED TO CREATE A CONVERSATION */
   const [create, { data, loading }] = useMutation(CREATE_CONVERSATION);
   if (data) {
     setChatState("default");
     return <Redirect to={`/chat/${data.createConversation.id}`} />;
   }
 
+
+  /* THIS IS THE PAGE RENDER */
   return (
+
     <div className="new-conversation p-2">
       {renderIf(searchError)(() => (
         <ErrorMessage message={searchError.message} />
@@ -59,7 +68,7 @@ const NewConversation = () => {
           onChange={(value) => setUsers(value)}
           onInputChange={(value) => setSearchTerm(value)}
           options={
-            searchData.searchUsers &&
+            searchData &&
             searchData.searchUsers.map((user) => ({
               label: user.name,
               value: user.id,
