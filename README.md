@@ -1,3 +1,7 @@
+CLONED FROM: git@github.com:juliob29/elixir-socializer-demo.git
+README is from that. I updated packages and fixed a bug of mismatched types within
+GraphQL queries to make it work - used this as a way to understand Elixir + Phoenix alongside React.
+
 [![CircleCI](https://circleci.com/gh/schneidmaster/socializer.svg?style=shield&circle-token=89ee7e9edcdafc99972d5811ed11176827ae3e3d)](https://circleci.com/gh/schneidmaster/socializer)
 
 # Socializer
