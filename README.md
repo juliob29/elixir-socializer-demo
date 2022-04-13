@@ -1,4 +1,4 @@
-CLONED FROM: git@github.com:juliob29/elixir-socializer-demo.git
+CLONED FROM: https://github.com/schneidmaster/socializer
 README is from that. I updated packages and fixed a bug of mismatched types within
 GraphQL queries to make it work - used this as a way to understand Elixir + Phoenix alongside React.
 
